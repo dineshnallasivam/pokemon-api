@@ -3,12 +3,14 @@ const axios = require('axios'); // Import Axios
 
 const app = express();
 const port = process.env.PORT || 3000;
+const cors = require('cors')
 
 // Base URL for the PokeAPI
 const POKEAPI_BASE_URL = 'https://pokeapi.co/api/v2';
 
 // Middleware to handle JSON requests
 app.use(express.json());
+app.use(cors())
 
 // Route to fetch all Pokémon
 app.get('/pokemon', async (req, res) => {
